@@ -1,0 +1,37 @@
+<p>Klikom na željenu stavku prikazaće Vam se detalji o njoj!</p>
+<h3>Doručak</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li  (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Dorucak'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>
+<h3>Sendviči</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Sendvici'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>
+<h3>Salate</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Salate'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>
+<h3>Pice</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Pice'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>
+<h3>Paste</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Paste'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>
+<h3>Piletina</h3>
+<ul type="none" class="list-group" *ngFor="let stavka of hranaInput" >
+    <li (click)="odabratiZaVise(stavka)" *ngIf="stavka.vrsta=='Piletina'" >
+      <a class="list-group-item list-group-item-action">{{stavka.naziv}}</a>
+    </li>
+</ul>

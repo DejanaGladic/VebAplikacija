@@ -1,0 +1,19 @@
+<h2 class="page-header">PRIJAVI SE</h2>
+<form (ngSubmit)="prijaviSeSubmit()">    
+  <div class="form-group">
+    <label>Korisničko ime</label>       
+    <input type="text" class="form-control" name="korisnickoIme"  [(ngModel)]="korisnickoIme" required placeholder="Korisnicko ime">
+  </div>
+
+  <div class="form-group">
+    <label>Lozinka</label>       
+    <input type="password" class="form-control" name="lozinka"  [(ngModel)]="lozinka" required placeholder="Lozinka" >
+  </div>
+
+  <button class="btn boja" type="submit">Potvrdi</button>
+
+</form>
+
+<img  width="350" height="250" src="../assets/slike/cedjena.jpg">
+<img title="Rolovana piletina" width="350" height="250" src="../assets/slike/rol.jpg">
+<img title="Grilovana piletina" width="350" height="250" src="../assets/slike/gril2.jpg">

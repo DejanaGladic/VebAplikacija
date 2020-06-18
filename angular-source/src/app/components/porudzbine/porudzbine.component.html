@@ -1,0 +1,18 @@
+<table class="table table-hover" *ngIf="listaPorudzbina">
+  <tr bgcolor="#a05549">
+    <th>Naručilac</th>
+    <th>Broj telefona</th>    
+    <th>Porudžbina</th>
+    <th>Ukupna cena (rsd)</th>  
+    <th>Datum i vreme</th>    
+    <th></th>          
+  </tr>
+  <tr  *ngFor="let porudzbina of listaPorudzbina">
+    <td>{{porudzbina.korisnik.korisnickoIme}}</td>
+    <td>{{porudzbina.korisnik.brojTelefona}}</td>    
+    <td>{{porudzbina.stavke}}</td>
+    <td>{{porudzbina.cena}}</td>
+    <td>{{porudzbina.datumIVreme}}</td>        
+    <td *ngIf="trenutniKorisnik.korisnickoIme=='dejanaGladic'"><button  class="btn boja" type="button" (click)=obrisiPorudzbinu(porudzbina)>obriši</button></td>
+  </tr>
+</table>

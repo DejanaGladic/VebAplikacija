@@ -1,0 +1,30 @@
+<div>
+    <form>    
+      <!--ako je var editTitle false prikazace se naslov i klikom na njega izvrsice se dogadjaj koji postavlja editTitle na true i ulazi u onaj prvi if-->
+      <h3 *ngIf="!promeniVrstu" (click)="klikNaVrstu()">{{detaljiOStavci.vrsta}}</h3>
+      <div  *ngIf="promeniVrstu" class="form-group">
+        <!--detaljiOStavci.naziv se odnosi na onaj input detaljiOStavci; ovo znaci da se input polje puni podacima-->
+          <input  type="input" class="form-control" name="vrsta" required placeholder="vrsta" [(ngModel)]="detaljiOStavci.vrsta">
+      </div>
+
+      <div class="form-group">
+          <label for="naziv">Naziv</label>
+          <input type="input" class="form-control" name="naziv" required placeholder="naziv" [(ngModel)]="detaljiOStavci.naziv">
+      </div>
+
+      <div class="form-group">
+        <label for="cena">Cena</label>        
+        <input  type="input" class="form-control" name="cena" required placeholder="cena" [(ngModel)]="detaljiOStavci.cena" >
+      </div>
+
+      <div class="form-group">
+        <label for="opis">Opis</label>        
+        <textarea class="form-control" rows="5" name="opis" required placeholder="opis" [(ngModel)]="detaljiOStavci.opis"></textarea>
+      </div>
+
+      <button type="button" *ngIf="auth.ifLoggedIn() && auth.whoIsLoggedIn()=='admin'" (click)="izmeni(detaljiOStavci)" class="btn boja">Prihvati izmene</button>
+      <button type="button" *ngIf="auth.ifLoggedIn() && auth.whoIsLoggedIn()=='admin'" (click)="obrisi(detaljiOStavci)" class="btn boja">Obriši</button>
+      <button type="button" *ngIf="auth.ifLoggedIn() && auth.whoIsLoggedIn()=='obicanKorisnik'" (click)="dodajUKorpu(detaljiOStavci)" class="btn boja">Dodaj u korpu</button> 
+           
+    </form>
+</div>

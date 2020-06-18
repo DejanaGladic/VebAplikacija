@@ -1,0 +1,32 @@
+<h2 class="page-header">REGISTRUJ SE</h2>
+<form (ngSubmit)="registrujSubmit()">    
+  <div class="form-group">
+    <label>Ime i prezime</label>   
+    <input type="text" class="form-control" name="ime"  [(ngModel)]="ime" required placeholder="Ime i prezime">
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>       
+    <input type="text" class="form-control" name="email"  [(ngModel)]="email" required placeholder="slicno@ovome.com">
+  </div>
+
+  <div class="form-group">
+    <label>Broj telefona</label>       
+    <input type="text" class="form-control" name="brojTelefona"  [(ngModel)]="brojTelefona" required placeholder="Broj telefona(9 ili 10 brojeva,bez drugih karaktera)">
+  </div>
+
+  <div class="form-group">
+    <label>Korisničko ime</label>       
+    <input type="text" class="form-control" name="korisnickoIme"  [(ngModel)]="korisnickoIme" required placeholder="Korisnicko ime">
+  </div>
+
+  <div class="form-group">
+    <label>Lozinka</label>       
+    <input type="password" class="form-control" name="lozinka"  [(ngModel)]="lozinka" required placeholder="Lozinka" >
+  </div>
+
+  <button class="btn boja" type="submit">Potvrdi</button>
+
+
+   
+</form>

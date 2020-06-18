@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+  <h2><em>Dobrodošli!</em></h2>
+  <img width="1050" height="300" src="../assets/slike/firma.jpg">
+  <hr class="my-4"> 
+
+  <p class="lead">Ukoliko želite poručiti nešto iz našeg jelovnika, tu smo za Vas!</p>
+  <p>Kralja Aleksandra I Karadjordjevica 17</p>
+  <p >Broj telefona: 023-536-914</p>
+  <a  target="_blank" href="https://www.instagram.com/caffepizzeriafirma/?hl=en"><img class="icon"width="35" height="25"alt="instagram" src="../assets/slike/instagram.svg"></a> 
+  <a  target="_blank" href="https://www.facebook.com/caffefirma.zrenjanin/"><img width="35" height="25"alt="facebook" src="../assets/slike/facebook.png"></a> 
+  
+</div>
+<div class="alg">  
+
+    <img title="Jaja na oko" width="350" height="250" src="../assets/slike/jajanaoko.jpg">
+    <img title="Cezar sendvic" width="350" height="250" src="../assets/slike/cezar.jpg">
+    <img title="Karbonara pica" width="350" height="250" src="../assets/slike/gurmanskapica.jpg">
+    <img title="Grilovana piletina" width="350" height="250" src="../assets/slike/gril.jpg">
+    <img title="Kalcona" width="350" height="250" src="../assets/slike/kalcona.jpg">
+    <img  title="Cezar salata" width="350" height="250" src="../assets/slike/cezarsalata.jpg">
+</div>
+<div *ngIf="!auth.ifLoggedIn()">
+  <footer class="blockquote-footer">Ako<cite title="Source Title"> nemate nalog</cite></footer>  
+  <a class="btn boja cl" [routerLink]="['/register']">Registruj se</a>
+  
+  <footer class="blockquote-footer">Ako ste uspešno registrovani,<cite title="Source Title"> prijavite se </cite>i narucite!</footer>
+  <a class="btn boja cl" [routerLink]="['/login']">Prijavi se</a>        
+</div>
+

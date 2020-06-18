@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-6">
+      <app-lista (SelektovanaStavka)="odabratiStavku($event)"  [hranaInput]="listaHrane"></app-lista>
+      <button *ngIf="auth.ifLoggedIn() && auth.whoIsLoggedIn()=='admin'" (click)="novaStavka()" style="margin-bottom:2px" type="button" class="btn boja">Dodaj stavku</button>
+      <button  *ngIf="auth.ifLoggedIn() && auth.whoIsLoggedIn()=='obicanKorisnik'" (click)="poruci()" style="margin-bottom:2px" type="button" class="btn boja">Potvrdi porudzbinu</button>     
+    </div>
+
+    <div class="col-sm-3">
+            <div *ngIf="!sakrijNovuStavku">
+                    <h2>NOVA STAVKA</h2>
+                    <form #form="ngForm" (ngSubmit)="dodajStavku(form.value)" class="well">
+                      <div class="form-group">
+                        <label>Vrsta</label>
+                        <select class="custom-select" name="vrsta" ngModel>
+                                <option value="Dorucak">Doručak</option>
+                                <option value="Sendvici">Sendviči</option>
+                                <option value="Salate">Salate</option>
+                                <option value="Paste">Paste</option>
+                                <option value="Pice">Pice</option>
+                                <option value="Piletina">Piletina</option>                                                                
+                        </select>
+                      </div>
+                      <div class="form-group">
+                          <label>Naziv</label>
+                          <input  type="text" class="form-control" name="naziv" ngModel>
+                      </div>
+                      <div class="form-group">
+                          <label>Cena</label>
+                          <input type="text" class="form-control" name="cena" ngModel>
+                      </div>
+                      <div class="form-group">
+                            <label>Opis</label>
+                            <input type="text" class="form-control" name="opis" ngModel>
+                      </div>
+                      <button type="submit" class="btn boja">Sačuvaj</button>
+                      <button type="button" *ngIf="!sakrijNovuStavku" (click)="nazadNovaStavka()" class="btn boja">Nazad</button>
+                      
+                    </form>
+            </div>
+
+
+        <app-detalji-ostavci (dogIzmeni)="izmeniStavku($event)"
+            (dogObrisi)="obrisiStavku($event)"
+            (korpa)="dodajUKorpu($event)"
+            *ngIf="odabranaStavka  && sakrijNovuStavku" [detaljiOStavci]="odabranaStavka"></app-detalji-ostavci>
+            <button type="button" *ngIf="odabranaStavka  && sakrijNovuStavku" (click)="nazadSelektovanaStavka()" class="btn boja">Nazad</button>                
+        </div>
+</div>

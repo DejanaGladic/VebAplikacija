@@ -1,0 +1,17 @@
+.boja{
+    border-color:#241b1b;
+    color:#241b1b;
+}
+
+.btn {
+    border: 2px solid #241b1b;
+    background-color:#f0f0e6;
+    color: #241b1b;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.boja:hover {
+    background-color: #f6edc7;
+    color: #241b1b;
+}
